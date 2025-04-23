@@ -1,0 +1,12 @@
+html 
+    head 
+        title Series
+        link(rel="stylesheet", href="/output.css")
+    body(class="max-w-7xl mx-auto") 
+        h1(class="mt-16 text-5xl font-bold") Series
+        div(class="mt-8 grid md:grid-cols-3 gap-4")
+            each serie in data
+                a(href=`/series/${serie.id}`)
+                    img(src=`https://image.tmdb.org/t/p/w500${serie.poster_path}`, alt="")
+                    h2(class="text-lg")= serie.name 
+                    p(class="text-amber-700")= serie.vote_average   
